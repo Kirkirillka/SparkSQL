@@ -5,7 +5,7 @@ import org.apache.log4j.Level
 
 import scala.reflect.internal.util.TableDef.Column
 
-import gdelt.utils.{GDELTdata}
+import gdelt.utils.GDELTdata
 
 
 
@@ -31,8 +31,8 @@ object GDELT_analysis {
     val gdelt = new GDELTdata(sparkSession,csvFile)
 
     // All events in USA or RUSSIA
-    //gdelt.show_usa_or_russia()
-    //gdelt.join_with_event_desc()
+    gdelt.show_usa_or_russia()
+    gdelt.join_with_event_desc()
     gdelt.get_top10_events()
 
   }
